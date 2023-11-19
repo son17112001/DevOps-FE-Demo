@@ -19,7 +19,7 @@ pipeline {
        stage('Deploy') {
             steps {  
                 script {
-                   def dockerCmd = 'docker run -itd --name My-first-container -p 80:5000 son/dev:latest'
+                   def dockerCmd = 'docker run -itd --name My-first-container -p 3001:8080 son/dev:latest'
                 }
             }
        }
