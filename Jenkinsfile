@@ -20,7 +20,7 @@ pipeline {
        stage('Deploy') {
             steps {  
                 script {
-                    sh 'docker container run -itd --name My-first-container -p 3001:5000 son/dev:latest'
+                    sh 'docker container run -d --rm --name My-first-container -p 3001:5000 son/dev:latest'
                 }
             }
        }
