@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                // sh 'npm run build'
+                sh 'npm run build'
             }
         }
        stage('Build Image') {
@@ -19,7 +19,7 @@ pipeline {
        stage('Deploy') {
             steps {  
                 script {
-                   def dockerCmd = 'docker run -itd --name My-first-container -p 3001:8080 son/dev:latest'
+                    sh 'docker run -itd --name My-first-container -p 3001:8080 son/dev:latest'
                 }
             }
        }
