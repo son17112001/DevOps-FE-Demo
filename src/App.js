@@ -18,8 +18,8 @@ function App() {
     <div className="App">
      <div id="particles-js"></div>
           <div className="content">
-          <h1>Welcome to Demo Deploy</h1>
-          <p>Container Name: {data || 'Loading'}</p>
+          <h1>Container Name: {data || 'Loading'}</h1>
+          <p>Welcome to Demo Deploy</p>
           <button className="spacex-button">OK</button>
           </div>
     </div>
