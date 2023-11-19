@@ -1,13 +1,26 @@
+import { useEffect } from 'react';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch("http://161.97.89.22:9090/api/container", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className="App">
      <div id="particles-js"></div>
           <div className="content">
-          <h1>Welcome to Demo Deploy Github Action On Dev</h1>
-          <p>Exploring the universe, one launch at a time, config app dev</p>
-          <button className="spacex-button">Explore</button>
+          <h1>Welcome to Demo Deploy</h1>
+          <p>Container Name: {data || 'Loading'}</p>
+          <button className="spacex-button">OK</button>
           </div>
     </div>
   );
