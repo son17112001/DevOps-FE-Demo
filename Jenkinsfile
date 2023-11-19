@@ -15,6 +15,7 @@ pipeline {
                 sh 'docker build -t reactimage .'
                 sh 'docker container stop My-first-container || echo "this container does not exist"'
                 sh 'docker tag reactimage:latest son/dev:latest'
+                sh 'echo y | docker container prune '
             }    
        }
        stage('Deploy') {
