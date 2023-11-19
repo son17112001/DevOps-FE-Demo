@@ -13,14 +13,14 @@ pipeline {
        stage('Build Image') {
             steps { 
                 sh 'docker build -t reactimage .'
-                sh 'docker container stop My-first-container || echo "this container does not exist" '
+                sh 'docker container stop My-first-container || echo "this container does not exist"'
                 sh 'docker tag reactimage:latest son/dev:latest'
             }    
        }
        stage('Deploy') {
             steps {  
                 script {
-                    sh 'docker run -itd --name My-first-container -p 80:5000 son/dev:latest'
+                    sh 'docker container run -itd --name My-first-container -p 80:5000 son/dev:latest'
                 }
             }
        }
