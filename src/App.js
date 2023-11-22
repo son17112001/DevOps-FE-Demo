@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    fetch("http://161.97.89.22:32771/api/container", {
+    fetch("http://backend:8080/api/container", {
       method: "GET",
     })
       .then((response) => response.json())
